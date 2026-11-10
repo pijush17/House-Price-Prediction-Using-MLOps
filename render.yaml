@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: house-price-prediction-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python -m src.train --data data/raw/sample_housing.csv
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeployTrigger: commit

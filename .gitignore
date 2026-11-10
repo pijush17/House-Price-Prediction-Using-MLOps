@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.py[cod]
+artifacts/*.joblib
+mlruns/
+tmp/
+data/raw/*.csv
+!data/raw/sample_housing.csv
